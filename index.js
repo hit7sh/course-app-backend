@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const adminRouter = require("./routes/admin");
 const userRouter = require("./routes/user");
+require('dotenv').config();
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(cors());
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
 
-mongoose.connect('mongourl',
+mongoose.connect(process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true, dbName: "CourseApp" });
 
 app.listen(3000, () => {

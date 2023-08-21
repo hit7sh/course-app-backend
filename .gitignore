@@ -1,1 +1,3 @@
-mongourl.txt
+.env
+node_modules
+og_index.js
