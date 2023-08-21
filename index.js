@@ -12,7 +12,6 @@ app.use(cors());
 
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
-
 mongoose.connect(process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true, dbName: "CourseApp" });
 
